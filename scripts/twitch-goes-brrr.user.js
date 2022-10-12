@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Twitch Goes Brrr
-// @version      0.1
+// @version      0.2
 // @description  Makes your butt tingle
 // @author       notasuka
 // @homepage https://github.com/notasuka/twitch-goes-brrr
