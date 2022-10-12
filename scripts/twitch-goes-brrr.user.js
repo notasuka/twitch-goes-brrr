@@ -4,16 +4,16 @@
 // @description  Makes your butt tingle
 // @author       notasuka
 // @homepage https://github.com/notasuka/twitch-goes-brrr
-// @updateurl https://github.com/notasuka/twitch-goes-brrr/raw/main/twitch-goes-brrr.user.js
-// @downloadurl https://github.com/notasuka/twitch-goes-brrr/raw/main/twitch-goes-brrr.user.js
+// @updateurl https://raw.githubusercontent.com/notasuka/twitch-goes-brrr/main/scripts/twitch-goes-brrr.user.js
+// @downloadurl hhttps://raw.githubusercontent.com/notasuka/twitch-goes-brrr/main/scripts/twitch-goes-brrr.user.js
 // @include http*://twitch.tv/*/
 // @include http*://*.twitch.tv/*/
 // @include http*://*.twitch.tv
 // @include http*://streamelements.com/*/
 // @include http*://*.streamelements.com/*/
 // @include http*://*.streamelements.com
-// @require https://cdn.jsdelivr.net/npm/buttplug@0.12.2/dist/web/buttplug.min.js
-// @require https://raw.githubusercontent.com/buttplugio/buttplug-tampermonkey/master/utils/buttplug-tampermonkey-ui.js
+// @require https://cdn.jsdelivr.net/npm/buttplug@1.0.1/dist/web/buttplug.min.js
+// @require https://raw.githubusercontent.com/notasuka/twitch-goes-brrr/main/utils/buttplug-tampermonkey-ui.js
 // @copyright MIT
 // ==/UserScript==
 
