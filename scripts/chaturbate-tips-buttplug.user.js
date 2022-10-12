@@ -36,6 +36,7 @@
 // @require https://raw.githubusercontent.com/notasuka/twitch-goes-brrr/main/utils/buttplug-tampermonkey-ui.js
 // @copyright MIT
 // ==/UserScript==
+Buttplug.buttplugInit().then(() => { console.log("Buttplug library loaded!")} )
 
 function newTipsOccurred(tips) {
   console.log('Received new tips');
