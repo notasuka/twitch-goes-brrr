@@ -1,3 +1,7 @@
+(async function() {
+  Buttplug.buttplugInit().then(() => { console.log("Buttplug library loaded!")})
+})()
+
 window.addEventListener("load", function (e) {
   let style = document.createElement("style");
   style.innerHTML = `
@@ -233,9 +237,8 @@ window.addEventListener("load", function (e) {
   window.buttplug_devices = [];
 
   setTimeout(() =>
-             (async function () {
+             (function () {
                // Set up Buttplug
-               Buttplug.buttplugInit().then(() => { console.log("Buttplug library loaded!")})
                const buttplug_client = new Buttplug.ButtplugClient("Tutorial Client");
                const connector_div = document.getElementById("buttplug-connector");
                const enumeration_div = document.getElementById("buttplug-enumeration");
