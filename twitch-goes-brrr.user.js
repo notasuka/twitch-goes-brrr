@@ -1,6 +1,5 @@
 // ==UserScript==
 // @name         Twitch Goes Brrr
-// @namespace    http://tampermonkey.net/
 // @version      0.1
 // @description  Makes your butt tingle
 // @author       Asuka
