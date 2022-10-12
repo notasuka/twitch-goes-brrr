@@ -4,6 +4,9 @@ GM_addElement(document.body, 'script', {
 });
 
 window.addEventListener("load", function (e) {
+  (async function() {
+    await Buttplug.buttplugInit();
+  })
   let style = document.createElement("style");
   style.innerHTML = `
      #buttplug-top-container h3, li {
