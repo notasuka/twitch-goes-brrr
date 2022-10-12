@@ -1,5 +1,7 @@
-Buttplug.buttplugInit().then(() => { console.log("Buttplug library loaded!")} )
-//buttplugInit().then(() => { console.log("Buttplug library loaded!")} )
+GM_addElement(document.body, 'script', {
+  src: 'https://cdn.jsdelivr.net/npm/buttplug@1.0.17/dist/web/buttplug.min.js',
+  type: 'text/javascript'
+});
 
 window.addEventListener("load", function (e) {
   let style = document.createElement("style");
