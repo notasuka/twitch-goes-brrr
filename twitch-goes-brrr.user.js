@@ -4,11 +4,13 @@
 // @version      0.1
 // @description  Makes your butt tingle
 // @author       Asuka
+// @homepage https://github.com/notasuka/twitch-goes-brrr
+// @updateurl https://github.com/notasuka/twitch-goes-brrr/raw/main/twitch-goes-brrr.user.js
+// @downloadurl https://github.com/notasuka/twitch-goes-brrr/raw/main/twitch-goes-brrr.user.js
 // @include http*://twitch.tv/*/
 // @include http*://*.twitch.tv/*/
 // @include http*://streamelements.com/*/
 // @include http*://*.streamelements.com/*/
-// @exclude http*://*.*/terms/*
 // ==/UserScript==
 
 const log = (str) => {
