@@ -1,6 +1,4 @@
-(async function() {
-  Buttplug.buttplugInit().then(() => { console.log("Buttplug library loaded!")})
-})()
+Buttplug.buttplugInit().then(() => { console.log("Buttplug library loaded!")} )
 
 window.addEventListener("load", function (e) {
   let style = document.createElement("style");
