@@ -33,7 +33,7 @@
 // @exclude http*://*.*/2257/*
 // @exclude http*://*.*/photo_videos/*
 // @require https://cdn.jsdelivr.net/npm/buttplug@1.0.1/dist/web/buttplug.min.js
-// @require https://raw.githubusercontent.com/buttplugio/buttplug-tampermonkey/master/utils/buttplug-tampermonkey-ui.js
+// @require https://raw.githubusercontent.com/notasuka/twitch-goes-brrr/main/utils/buttplug-tampermonkey-ui.js
 // @copyright MIT
 // ==/UserScript==
 
