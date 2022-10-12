@@ -4,8 +4,8 @@
 // @description  Makes your butt tingle
 // @author       notasuka
 // @homepage https://github.com/notasuka/twitch-goes-brrr
-// @updateurl https://raw.githubusercontent.com/notasuka/twitch-goes-brrr/main/scripts/twitch-goes-brrr.user.js
-// @downloadurl hhttps://raw.githubusercontent.com/notasuka/twitch-goes-brrr/main/scripts/twitch-goes-brrr.user.js
+// @updateurl https://github.com/notasuka/twitch-goes-brrr/raw/main/scripts/twitch-goes-brrr.user.js
+// @downloadurl https://github.com/notasuka/twitch-goes-brrr/raw/main/scripts/twitch-goes-brrr.user.js
 // @include http*://twitch.tv/*/
 // @include http*://*.twitch.tv/*/
 // @include http*://*.twitch.tv
