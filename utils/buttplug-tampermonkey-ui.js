@@ -1,7 +1,8 @@
+(async () => {
+  await Buttplug.buttplugInit();
+})()
+
 window.addEventListener("load", function (e) {
-  (async function() {
-    await Buttplug.buttplugInit();
-  })
   let style = document.createElement("style");
   style.innerHTML = `
      #buttplug-top-container h3, li {
@@ -236,8 +237,10 @@ window.addEventListener("load", function (e) {
   window.buttplug_devices = [];
 
   setTimeout(() =>
-             (function () {
+             (async function () {
                // Set up Buttplug
+               try {
+                await Buttplug.buttplugInit();
                const buttplug_client = new Buttplug.ButtplugClient("Tutorial Client");
                const connector_div = document.getElementById("buttplug-connector");
                const enumeration_div = document.getElementById("buttplug-enumeration");
@@ -380,6 +383,9 @@ window.addEventListener("load", function (e) {
                function setTranslate(xPos, yPos, el) {
                  el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
                }
+              } catch(e) {
+                console.log(e);
+              }
              })(), 0);
 
 }, false);

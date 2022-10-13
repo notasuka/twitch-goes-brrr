@@ -12,52 +12,42 @@
 // @include http*://streamelements.com/*/
 // @include http*://*.streamelements.com/*/
 // @include http*://*.streamelements.com
-// @require https://cdn.jsdelivr.net/npm/buttplug@1.0.1/dist/web/buttplug.min.js
-// @require https://raw.githubusercontent.com/notasuka/twitch-goes-brrr/main/utils/buttplug-tampermonkey-ui.js
+// @grant GM_addElement
+// @grant unsafeWindow
 // @copyright MIT
 // ==/UserScript==
 
-function newTipsOccurred(tips) {
-    console.log('Received new tips');
-    console.log(tips);
-}
-function log(str) {
-    console.log(`[Asuka Buttplug]: ${str}`);
-};
-function tipReceived(amount) {
-    log(amount);
-};
+GM_addElement(document.body, 'script', {
+  src: 'https://cdn.jsdelivr.net/npm/buttplug@1.0.17/dist/web/buttplug.min.js',
+  type: 'text/javascript'
+});
 
 window.addEventListener('load', async function() {
-    (function() {
-      let chatbox = $('.chat-box')[0];
-      let lastTipCount = 0;
-      chatbox.addEventListener('DOMNodeInserted', async function(event){
-        let tips = Array
-            .apply(null, $('.chat-box span.emoticonImage')
-                   .closest('div:not([data-nick]):has(span[style])'))
-            .filter(x => x.querySelector('span.emoticonImage').innerHTML.match(/tipped \d+ token(s)?/))
-            .map(x => {
-              return {
-                donation: x.firstChild.innerHTML,
-                amount: parseInt(x.lastChild.innerHTML.match(/tipped (\d+) token(s)?/)[1])
-              };
-            });
-        let newTips = tips.slice(lastTipCount);
-        lastTipCount = tips.length;
-        if (newTips.length) {
-          newTipsOccurred(newTips);
-          // window.buttplug_devices is defined in the buttplug-tampermonkey-ui.js
-          // file, and contains a list of all devices we've added. This is a
-          // Buttplug.ButtplugClientDevice object, API is at
-          // https://buttplug-js.docs.buttplug.io/classes/buttplugclientdevice.html
-          for (const device of window.buttplug_devices) {
-            if (device.AllowedMessages.includes("VibrateCmd")) {
-              await window.buttplug_devices[0].SendVibrateCmd(1.0);
-              setTimeout(() => window.buttplug_devices[0].SendVibrateCmd(0), newTips[0].amount * 100);
-            }
-          }
-        }
+  try {
+    await Buttplug.buttplugInit();
+    let buttplugClient = new Buttplug.ButtplugClient("Tutorial Client");
+
+    buttplugClient.addListener('deviceadded', async (device) => {
+      console.log('Connected devices:');
+      buttplugClient.Devices.forEach((device) => {
+        console.log('  - '+device.Name);
+        device.vibrate(25)
       });
-    })();
-  }, false);
+    });
+    buttplugClient.addListener('deviceremoved', async (device) => {
+      console.log('Connected devices:');
+      buttplugClient.Devices.forEach((device) => {
+        console.log('  - '+device.Name);
+      });
+    });
+
+    // use the embeded connector
+    const connector = new Buttplug.ButtplugEmbeddedConnectorOptions();
+    await buttplugClient.connect(connector);
+    await buttplugClient.startScanning();
+
+
+  } catch (e) {
+    console.log(e);
+  }
+})
