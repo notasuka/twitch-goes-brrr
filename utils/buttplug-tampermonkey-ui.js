@@ -1,7 +1,3 @@
-(async () => {
-  await Buttplug.buttplugInit();
-})()
-
 window.addEventListener("load", function (e) {
   let style = document.createElement("style");
   style.innerHTML = `
