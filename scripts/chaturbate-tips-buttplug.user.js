@@ -2,7 +2,7 @@
 // @name Chaturbate Tips to Buttplug.io
 // @description Uses buttplug-js to cause local sex toys to work when a tip appears in a chaturbate chat
 // @author buttplugio
-// @version 0.7
+// @version 0.8
 // @homepage https://github.com/notasuka/twitch-goes-brrr
 // @updateurl https://github.com/notasuka/twitch-goes-brrr/raw/main/scripts/chaturbate-tips-buttplug.user.js
 // @downloadurl https://github.com/notasuka/twitch-goes-brrr/raw/main/scripts/chaturbate-tips-buttplug.user.js
@@ -37,6 +37,11 @@
 // @require https://raw.githubusercontent.com/notasuka/twitch-goes-brrr/main/utils/buttplug-tampermonkey-ui.js
 // @copyright MIT
 // ==/UserScript==
+
+GM_addElement(document.body, 'script', {
+  src: 'https://cdn.jsdelivr.net/npm/buttplug@1.0.17/dist/web/buttplug.min.js',
+  type: 'text/javascript'
+});
 
 function newTipsOccurred(tips) {
   console.log('Received new tips');
